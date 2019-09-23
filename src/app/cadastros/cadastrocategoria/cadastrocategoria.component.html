@@ -1,0 +1,31 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Cadastrar de Categoria</h3>
+  </div>
+  <form role="form">
+    <div class="card-body">
+      <div class="form-group">
+        <label>Título</label>
+        <input type="text" name="titulo" class="form-control" [(ngModel)]="titulo">
+      </div>
+      <div class="form-group">
+        <label>Sub Título</label>
+        <input type="text" name="subtitulo" class="form-control" [(ngModel)]="subtitulo">
+      </div>
+      <div>
+        <label>Imagem</label>
+        <select class="form-control" name="imagem" [(ngModel)]="imagem">
+          <option value="assets/imgs/sanduiche-natural.jpg">Sanduíches</option>
+          <option value="assets/imgs/pao-queijo.jpg">Pães de Queijo</option>
+          <option value="assets/imgs/pizza.jpg">Pizzas</option>
+          <option value="assets/imgs/chinesa.jpg">Chinesa</option>
+          <option value="assets/imgs/suco.jpg">Bebidas</option>
+          <option value="assets/imgs/sobremesa.jpg">Doces</option>
+        </select>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-primary" (click)="criarCategoria()">Cadastrar</button>
+    </div>
+  </form>
+</div>

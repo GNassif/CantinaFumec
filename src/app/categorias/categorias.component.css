@@ -1,0 +1,17 @@
+
+.imgProduto{
+  width: 130px;
+  height: 100px;
+}
+
+.icones{
+  text-align: center;
+}
+
+.botao{
+  margin-right: 10px;
+}
+
+i{
+  color: white;
+}

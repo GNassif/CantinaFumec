@@ -1,0 +1,52 @@
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Pedidos Realizados</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<div class="card-body p-0">
+  <table class="table table-striped projects">
+      <thead>
+        <tr>
+          <th style="width: 20%">
+              Data
+          </th>
+          <th style="width: 25%">
+              Email
+          </th>
+          <th>
+              Valor Total
+          </th>
+          <th style="width: 28%" class="text-center">
+              Items
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pedido of pedidos">
+              <td>
+                {{pedido.date}}
+              </td>
+              <td>
+                {{pedido.userEmail}}
+              </td>
+              <td>
+                {{pedido.value | currency :'BRL':"symbol":'1.2'}}
+              </td>
+              <td>
+                <p *ngFor="let item of pedido.items">
+                  {{item.menuItem.name}}
+                  <span> x </span>
+                  <span>{{item.quantity}}</span>
+                  <span> : R$ </span>
+                  <span>{{item.menuItem.price | currency :'BRL':"symbol":'1.2'}}</span>
+                </p>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

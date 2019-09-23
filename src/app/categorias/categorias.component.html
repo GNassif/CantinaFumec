@@ -1,0 +1,62 @@
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Categorias</h1>
+          </div>
+          <div class="col-sm-6">
+            <a href="/cadastrarCategoria" class="btn btn-success float-right"><i class="fas fa-plus"></i></a>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<div class="card-body p-0">
+  <table class="table table-striped projects">
+      <thead>
+        <tr>
+          <th style="width: 20%">
+              Imagem
+          </th>
+          <th style="width: 25%">
+              Título
+          </th>
+          <th>
+              Sub Título
+          </th>
+          <th style="width: 8%" class="text-center">
+              Total produtos
+          </th>
+          <th style="width: 20%">
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let categoria of categorias">
+              <td>
+                <img alt="Imagem_Categoria" class="img-fluid mb-3 imgProduto" src="{{categoria.imagem}}">
+              </td>
+              <td>
+                {{categoria.cardTitle}}
+              </td>
+              <td>
+                {{categoria.cardSubtitle}}
+              </td>
+              <td>
+                {{categoria.menu.length}}
+              </td>
+              <td class="project-actions text-right">
+                <div class="icones">
+                  <a class="btn btn-primary btn-sm botao" (click)="editaCategoria(categoria.id,categoria.cardTitle,categoria.cardSubtitle)">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a class="btn btn-danger btn-sm botao" (click)="deletaCategoria(categoria.id,categoria.cardTitle)">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </div>
+
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

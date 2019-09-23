@@ -1,0 +1,93 @@
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-2">
+            <h1>Produtos</h1>
+          </div>
+          <div class="col-sm-2">
+            <a href="/cadastrarProduto" class="btn btn-success float-right"><i class="fas fa-plus"></i></a>
+          </div>
+          <div class="col-sm-4">
+            <div id="valor">
+              Valor do carrinho : {{valorTotal | currency :'BRL':"symbol":'1.2'}}
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <a (click)="limparCarrinho()" id="btnFinalizar" class="btn btn-primary float-right">Limpar Carrinho</a>
+          </div>
+          <div class="col-sm-2">
+            <a (click)="gerarPedido()" id="btnFinalizar" class="btn btn-primary float-right">Finalizar Pedido</a>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<div class="card">
+
+  <div class="card-header">
+    <h3 class="card-title">{{filtroSelecionado}}</h3>
+
+    <div class="card-tools">
+      <div class="input-group input-group-sm">
+          <div id="categoria">Categoria</div>
+          <div>
+            <select class="form-control" (change)="selecionaFiltro($event)">
+              <option *ngFor="let categoria of categorias">{{categoria.cardTitle}}</option>
+            </select>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<div class="card-body p-0">
+  <table class="table table-striped projects">
+      <thead>
+          <tr>
+              <th style="width: 20%">
+                  Imagem
+              </th>
+              <th style="width: 25%">
+                  Nome
+              </th>
+              <th>
+                  Descrição
+              </th>
+              <th style="width: 8%" class="text-center">
+                  Preço
+              </th>
+              <th style="width: 20%">
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let produto of produtos">
+              <td>
+                <img alt="Imagem_Produto" class="img-fluid mb-3 imgProduto" src={{produto.imagePath}}>
+              </td>
+              <td>
+                {{produto.name}}
+              </td>
+              <td>
+                {{produto.description}}
+              </td>
+              <td>
+                {{produto.price | currency :'BRL':"symbol":'1.2'}}
+              </td>
+              <td class="project-actions text-right">
+                <div class="icones">
+                  <a class="btn btn-success btn-sm botao" (click)="adicionaCarrinho(produto.name)">
+                    <i class="fas fa-cart-plus"></i>
+                  </a>
+                  <a class="btn btn-primary btn-sm botao" (click)="editaProduto(produto.name,produto.description,produto.price)">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a class="btn btn-danger btn-sm botao" (click)="deletaProduto(produto.name)">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </div>
+
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

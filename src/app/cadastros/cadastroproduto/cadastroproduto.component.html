@@ -1,0 +1,36 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Cadastro de Produto</h3>
+  </div>
+  <form role="form">
+    <div class="card-body">
+      <div class="form-group">
+        <label>Nome</label>
+        <input type="text" name="nome" class="form-control" [(ngModel)]="nome">
+      </div>
+      <div class="form-group">
+        <label>Descrição</label>
+        <input type="text" name="descricao" class="form-control" [(ngModel)]="descricao">
+      </div>
+      <div class="form-group">
+        <label>Preço</label>
+        <input type="text" name="preco" class="form-control" [(ngModel)]="preco">
+      </div>
+      <div>
+        <label>Categoria</label>
+        <select class="form-control" name="categoria" [(ngModel)]="categoria">
+          <option *ngFor="let categoria of categorias" value={{categoria.cardTitle}}>{{categoria.cardTitle}}</option>
+        </select>
+      </div>
+      <div>
+        <label>Imagem</label>
+        <select class="form-control" name="imagem" [(ngModel)]="imagem">
+          <option *ngFor="let categoria of categorias" value={{categoria.imagem}}>{{categoria.cardTitle}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-primary" (click)="criarProduto()">Cadastrar</button>
+    </div>
+  </form>
+</div>

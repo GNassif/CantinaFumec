@@ -1,0 +1,34 @@
+
+.imgProduto{
+  width: 130px;
+  height: 100px;
+}
+
+#valor{
+  text-align: right;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+#btnFinalizar{
+  color: white;
+  font-weight: bold;
+}
+
+.icones{
+  text-align: center;
+}
+
+.botao{
+  margin-right: 10px;
+}
+
+#categoria{
+  margin-right: 15px;
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+i{
+  color: white;
+}
